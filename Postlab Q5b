@@ -1,0 +1,94 @@
+
+R version 4.1.2 (2021-11-01) -- "Bird Hippie"
+Copyright (C) 2021 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Workspace loaded from ~/.RData]
+
+> # get the data into the software
+> Input =( 
++     "grouping height
++ men 181.5
++ men 187.3
++ men 175.3
++ men 178.3
++ men 169
++ men 183.2
++ men 184.5
++ women 175.4
++ women 172.1
++ women 181.1
++ women 165.2
++ women 166.3
++ women 167
++ women 170.3
++ ")
+> 
+> # do some kind of manipulations to the data
+> Data = read.table(textConnection(Input),header=TRUE)
+> 
+> # output some results
+> t.test(height ~ grouping, data=Data, 
++        var.equal=TRUE, 
++        conf.level=0.95)
+
+	Two Sample t-test
+
+data:  height by grouping
+t = 2.7654, df = 12, p-value = 0.01711
+alternative hypothesis: true difference in means between group men and group women is not equal to 0
+95 percent confidence interval:
+  1.869768 15.758803
+sample estimates:
+  mean in group men mean in group women 
+           179.8714            171.0571 
+
+> # get the data into the software
+> Input =( 
++     "grouping height
++ men 181.5
++ men 185.7
++ men 175.3
++ men 177.4
++ men 169
++ men 181.2
++ men 175.5
++ women 175.4
++ women 172.1
++ women 181.1
++ women 171.5
++ women 176.3
++ women 167
++ women 171.3
++ ")
+> 
+> # do some kind of manipulations to the data
+> Data = read.table(textConnection(Input),header=TRUE)
+> 
+> # output some results
+> t.test(height ~ grouping, data=Data, 
++        var.equal=TRUE, 
++        conf.level=0.95)
+
+	Two Sample t-test
+
+data:  height by grouping
+t = 1.6547, df = 12, p-value = 0.1239
+alternative hypothesis: true difference in means between group men and group women is not equal to 0
+95 percent confidence interval:
+ -1.398262 10.226834
+sample estimates:
+  mean in group men mean in group women 
+           177.9429            173.5286
